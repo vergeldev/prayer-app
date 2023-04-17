@@ -1,7 +1,10 @@
 const asyncHandler = require("express-async-handler");
+const Prayer = require("../models/prayersModel");
 
 const getPrayer = asyncHandler(async (req, res) => {
-  res.json({ message: "getting prayers" });
+  const prayers = await Prayer.find();
+
+  res.json(prayers);
 });
 
 const postPrayer = asyncHandler(async (req, res) => {
@@ -9,11 +12,30 @@ const postPrayer = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Please submit a text");
   }
-  res.json({ message: "creating a prayer" });
+  const prayers = await Prayer.create({
+    text: req.body.text,
+  });
+
+  res.json(prayers);
 });
 
 const putPrayer = asyncHandler(async (req, res) => {
-  res.json({ message: `updating prayer for ${req.params.id}` });
+  const prayers = await Prayer.findById(req.params.id);
+
+  if (!prayers) {
+    res.status(400);
+    throw new Error("Prayer not found");
+  }
+
+  const updatedPrayer = await Prayer.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {
+      new: true,
+    }
+  );
+
+  res.json(updatedPrayer);
 });
 
 const deletePrayer = asyncHandler(async (req, res) => {
