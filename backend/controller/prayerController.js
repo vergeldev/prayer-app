@@ -39,7 +39,16 @@ const putPrayer = asyncHandler(async (req, res) => {
 });
 
 const deletePrayer = asyncHandler(async (req, res) => {
-  res.json({ message: `deleting prayer for ${req.params.id}` });
+  const prayers = await Prayer.findById(req.params.id);
+
+  if (!prayers) {
+    res.status(400);
+    throw new Error("Prayer not found");
+  }
+
+  const deletedPrayer = await Prayer.findByIdAndRemove(req.params.id);
+
+  res.json({ id: req.params.id });
 });
 
 module.exports = { getPrayer, postPrayer, putPrayer, deletePrayer };
