@@ -6,8 +6,9 @@ const {
   putPrayer,
   deletePrayer,
 } = require("../controller/prayerController");
+const { protect } = require("../middleware/authMiddleware");
 
-router.route("/").get(getPrayer).post(postPrayer);
-router.route("/:id").put(putPrayer).delete(deletePrayer);
+router.route("/").get(protect, getPrayer).post(protect, postPrayer);
+router.route("/:id").put(protect, putPrayer).delete(protect, deletePrayer);
 
 module.exports = router;
