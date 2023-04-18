@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node backend/server.js",
     "backend": "nodemon backend/server.js",
-    "frontend": "npm start --prefix frontend"
+    "frontend": "npm start --prefix frontend",
+    "both": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "author": "Vergel Cartalla",
   "license": "MIT",
@@ -20,6 +21,7 @@
     "mongoose": "^7.0.3"
   },
   "devDependencies": {
+    "concurrently": "^8.0.1",
     "nodemon": "^2.0.22"
   }
 }
