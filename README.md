@@ -4,16 +4,16 @@ The Prayer App allows users to create and share personalized prayer entries with
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the root project directory, you can run:
 
 ### `npm run backend`
 
-Runs the server in the development mode with Nodemon
+Runs the server in the development mode with Nodemon.
 Open [http://localhost:5000](http://localhost:5000) or use postman to access RESTful API.
 
 ### `npm run frontend`
 
-Runs the server in the development mode with Nodemon
+Runs the frontend in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### `npm run both`
