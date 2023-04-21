@@ -4,14 +4,15 @@ The Prayer App allows users to create and share personalized prayer entries with
 
 ### Install dependencies
 
-# Backend deps
-
+```
+# Backend dependencies
 npm install
 
-# Frontend deps
 
+# Frontend dependencies
 cd frontend
 npm install
+```
 
 ## Available Scripts
 
