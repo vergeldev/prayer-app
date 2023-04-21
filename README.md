@@ -2,6 +2,17 @@
 
 The Prayer App allows users to create and share personalized prayer entries with friends, track requests, set reminders, and receive notifications when prayers are answered. It's a simple and intuitive tool for deepening your prayer life and connecting with others in your faith community.
 
+### Install dependencies
+
+# Backend deps
+
+npm install
+
+# Frontend deps
+
+cd frontend
+npm install
+
 ## Available Scripts
 
 In the root project directory, you can run:
