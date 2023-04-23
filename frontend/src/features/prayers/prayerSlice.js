@@ -55,6 +55,7 @@ export const deletePrayer = createAsyncThunk(
       const token = thunkAPI.getState().auth.user.token;
       return await prayerService.deletePrayer(id, token);
     } catch (error) {
+      console.log("hmmmmV");
       const message =
         (error.response &&
           error.response.data &&
@@ -80,7 +81,7 @@ export const prayerSlice = createSlice({
       .addCase(createPrayer.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.prayer.push(action.payload);
+        state.prayers.push(action.payload);
       })
       .addCase(createPrayer.rejected, (state, action) => {
         state.isLoading = false;
