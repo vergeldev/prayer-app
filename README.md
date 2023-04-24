@@ -1,8 +1,10 @@
 # Prayer App
 
+**For live demo link, click [here](https://vergeldevprayerapp.herokuapp.com/login)**
+
 The Prayer App allows users to create and share personalized prayer entries with friends, track requests, set reminders, and receive notifications when prayers are answered. It's a simple and intuitive tool for deepening your prayer life and connecting with others in your faith community.
 
-==This app is still in the early development stage.==
+_This app is still in the early development stage._
 
 ### Install dependencies
 
