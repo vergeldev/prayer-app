@@ -4,7 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import PrayerForm from "../components/PrayerForm";
 import PrayerItem from "../components/PrayerItem";
 import Spinner from "../components/Spinner";
-import { getPrayers, reset } from "../features/prayers/prayerSlice";
+import { getPrayers } from "../features/prayers/prayerSlice";
+import { reset } from "../features/auth/authSlice";
 
 function Dashboard() {
   const navigate = useNavigate();
