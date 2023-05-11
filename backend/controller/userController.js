@@ -75,6 +75,20 @@ const getMe = asyncHandler(async (req, res) => {
   res.status(200).json(req.user);
 });
 
+//search friend using email
+const getOthers = asyncHandler(async (req, res) => {
+  try {
+    const { email } = req.query;
+    const results = await User.find({
+      email: { $regex: email, $options: "i" },
+    });
+    res.json(results);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error");
+  }
+});
+
 // Generate JWT
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -86,4 +100,5 @@ module.exports = {
   registerUser,
   loginUser,
   getMe,
+  getOthers,
 };

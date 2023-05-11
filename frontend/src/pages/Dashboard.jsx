@@ -6,6 +6,7 @@ import PrayerItem from "../components/PrayerItem";
 import Spinner from "../components/Spinner";
 import { getPrayers } from "../features/prayers/prayerSlice";
 import { reset } from "../features/auth/authSlice";
+import SearchFriend from "../components/SeachFriend";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -56,6 +57,8 @@ function Dashboard() {
           <h3>You have not created any prayers yet!</h3>
         )}
       </section>
+
+      <SearchFriend />
     </>
   );
 }
