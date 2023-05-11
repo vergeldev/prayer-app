@@ -45,9 +45,9 @@ function Dashboard() {
 
       <PrayerForm />
 
-      <section className="max-w-md mx-auto">
+      <section className="max-w-lg mx-auto">
         {prayers.length > 0 ? (
-          <div className="mb-4">
+          <div className="">
             {prayers.map((prayer) => (
               <PrayerItem key={prayer._id} prayer={prayer} />
             ))}
